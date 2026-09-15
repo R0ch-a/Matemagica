@@ -1,0 +1,119 @@
+/* ============================================================
+   questao.css — resolucao guiada pela rolagem
+   O trilho (.cena) e' alto; dentro dele a tela (.cena-sticky)
+   fica presa abaixo do header enquanto a pagina rola. Quanto
+   mais o trilho passa, mais a resolucao avanca.
+   ============================================================ */
+
+.questao-cena {
+  --cena-h: calc(100vh - var(--header-h));
+  --cena-accent: #2dd4bf;   /* mesma cor de "modificado" das animacoes */
+}
+@supports (height: 100svh) {
+  .questao-cena { --cena-h: calc(100svh - var(--header-h)); }
+}
+
+.cena { position: relative; }
+
+.cena-sticky {
+  position: sticky;
+  top: var(--header-h);
+  height: var(--cena-h);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding-block: 14px;
+}
+
+/* Area disponivel para a composicao. O JS mede e escala 1920x1080. */
+.cena-tela {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+}
+
+.cena-quadro {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+.cena-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+  /* Mesmo ponto de partida do motor original: o que a composicao nao
+     define herda fonte e entrelinha padrao, nao a Manrope do site. */
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: normal;
+}
+
+/* ---------- Passo atual + progresso ---------- */
+.cena-hud {
+  flex: none;
+  max-width: 100%;
+  display: grid;
+  gap: 10px;
+}
+
+.cena-passo {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  align-items: baseline;
+  min-height: 2.9em;
+}
+.cena-passo-n {
+  grid-row: 1 / 3;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  color: var(--cena-accent);
+}
+.cena-passo-t { font-size: 15px; font-weight: 700; }
+.cena-passo-d { font-size: 13.5px; line-height: 1.4; color: var(--muted); }
+
+/* Uma faixa por passo, com largura proporcional a' duracao dele.
+   Cada faixa e' clicavel e rola ate' aquele passo. */
+.cena-barra { display: flex; gap: 4px; }
+.cena-seg {
+  position: relative;
+  height: 18px;
+  min-width: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.cena-seg::before,
+.cena-seg-fill {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 4px;
+  margin-top: -2px;
+  border-radius: 2px;
+}
+.cena-seg::before { right: 0; background: rgba(255, 255, 255, 0.14); transition: background var(--fast) var(--ease-in); }
+.cena-seg:hover::before { background: rgba(255, 255, 255, 0.3); }
+.cena-seg-fill { background: var(--cena-accent); }
+.cena-seg:focus-visible { outline: 2px solid var(--cena-accent); outline-offset: 2px; border-radius: 4px; }
+
+/* Tela em pe': a composicao fica com a largura toda e o conjunto
+   centraliza, em vez de a tela ocupar a altura e sobrar vazio. */
+@media (max-aspect-ratio: 1/1) {
+  .cena-tela { flex: none; aspect-ratio: 16 / 9; }
+  .cena-quadro { border-radius: 8px; }
+}

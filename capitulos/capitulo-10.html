@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Capítulo 10 — Questões resolvidas · 7º ano</title>
+<meta name="theme-color" content="#0b0c0e"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- Manrope: interface. Caveat, IBM Plex Mono e STIX Two Text: resolucoes animadas. -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Caveat:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=STIX+Two+Text:wght@400;500&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="../assets/css/base.css"/>
+<link rel="stylesheet" href="../assets/css/capitulo.css"/>
+<link rel="stylesheet" href="../assets/css/questao.css"/>
+
+<!-- Resolucoes: React local + um arquivo por questao + motor da rolagem.
+     defer preserva a ordem de execucao. -->
+<script defer src="../assets/vendor/react/react.production.min.js"></script>
+<script defer src="../assets/vendor/react/react-dom.production.min.js"></script>
+<script defer src="../assets/questoes/capitulo-10/q01-sexagesimal.js"></script>
+<script defer src="../assets/questoes/capitulo-10/q03-opostos.js"></script>
+<script defer src="../assets/questoes/capitulo-10/q13-angulos.js"></script>
+<script defer src="../assets/js/questao-cena.js"></script>
+<script defer src="../assets/js/capitulo.js"></script>
+</head>
+
+<body data-capitulo="10">
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a class="back-link" href="../index.html" aria-label="Voltar ao início">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Início</span>
+    </a>
+    <div class="page-id">
+      <span class="page-kicker">7º ano</span>
+      <span class="page-title">Capítulo 10</span>
+    </div>
+
+    <div class="page-actions">
+      <!-- Aponta para o data-youtube da questao aberta (capitulo.js). -->
+      <a class="yt-link is-disabled" id="yt-link" target="_blank" rel="noopener" aria-disabled="true" title="Vídeo narrado em breve">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="#ff1f1f"/>
+          <path d="M10 8.6v6.8l5.8-3.4z" fill="#fff"/>
+        </svg>
+      </a>
+
+      <div class="q-menu">
+        <button type="button" class="q-menu-btn" id="q-menu-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="q-menu-list">
+          <span><span class="q-menu-prefixo">Questão </span><span class="q-menu-num">1</span></span>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="q-menu-list" id="q-menu-list" role="menu" aria-label="Questões do capítulo 10" hidden></ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="questoes">
+
+  <!-- ============================================================
+       Uma questao = um <article>. O menu do header e a navegacao
+       anterior/proxima sao montados a partir destes blocos.
+
+       id            ancora da URL (capitulo-10.html#q1)
+       data-youtube  link do video narrado; vazio = icone desativado
+       data-resumo   texto do menu, quando o enunciado tem formulas (opcional)
+       data-cena     id da resolucao animada em window.Questoes
+       ============================================================ -->
+
+  <article class="questao" id="q1" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Medidas de ângulos</p>
+      <h1 class="questao-titulo">Questão 1</h1>
+      <p class="questao-enunciado">Sendo A = 4° 29″ + (14° 15′ 32″) · 5 e B = (32° 17′ 33″) : 3 − 7° 52″, calcule A − B.</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap10-q01"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>A − B = <strong>71° 33′ 10″</strong></p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q3" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Ângulos opostos pelo vértice</p>
+      <h1 class="questao-titulo">Questão 3</h1>
+      <p class="questao-enunciado">Sabendo que dois ângulos opostos pelo vértice somam 260°, determine a medida do complemento do suplemento de um desses ângulos.</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap10-q03"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>O complemento do suplemento mede <strong>40°</strong>.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q13" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Retas paralelas e transversais · IFPE (adaptada)</p>
+      <h1 class="questao-titulo">Questão 13</h1>
+      <p class="questao-enunciado">As retas <i>r</i> e <i>s</i> são paralelas; as retas <i>u</i> e <i>t</i>, duas transversais. Encontre o valor do ângulo <i>x</i> na figura.</p>
+
+      <!-- Mesma geometria da figura da animacao (q13-angulos.js), em repouso. -->
+      <figure class="questao-figura">
+        <svg viewBox="10 10 740 500" role="img" aria-label="Retas paralelas r e s cortadas pelas transversais u e t. Em r, o ângulo entre r e u mede 20°; no cruzamento de u e t, 120°; em s, o ângulo x entre s e t.">
+          <g stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity="0.75">
+            <line x1="40" y1="120" x2="700" y2="120"/>
+            <line x1="40" y1="360" x2="700" y2="360"/>
+            <line x1="120" y1="470" x2="620" y2="40"/>
+            <line x1="150" y1="40" x2="660" y2="470"/>
+          </g>
+          <g fill="none" stroke="currentColor" stroke-width="2.6">
+            <path d="M 579.0 120.0 A 52 52 0 0 0 566.4 86.1"/>
+            <path d="M 350.6 271.3 A 48 48 0 0 0 423.7 270.9"/>
+            <path class="fig-destaque" d="M 596.0 360.0 A 66 66 0 0 0 479.5 317.5"/>
+          </g>
+          <g font-family="'STIX Two Text', Georgia, serif" font-size="27" fill="currentColor" text-anchor="middle">
+            <text x="604" y="92">20°</text>
+            <text x="390" y="322">120°</text>
+            <text class="fig-destaque" x="563" y="270" font-style="italic">x</text>
+          </g>
+          <g font-family="'IBM Plex Mono', monospace" font-size="24" fill="currentColor" opacity="0.7">
+            <text x="712" y="112">r</text>
+            <text x="712" y="352">s</text>
+            <text x="628" y="32">u</text>
+            <text x="668" y="486">t</text>
+          </g>
+        </svg>
+      </figure>
+
+      <ol class="questao-alternativas">
+        <li><span>a)</span> 140°</li>
+        <li><span>b)</span> 145°</li>
+        <li><span>c)</span> 150°</li>
+        <li><span>d)</span> 155°</li>
+        <li><span>e)</span> 160°</li>
+      </ol>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap10-q13"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>Alternativa <strong>a)</strong>: <i>x</i> = <strong>140°</strong>.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+</main>
+
+</body>
+</html>

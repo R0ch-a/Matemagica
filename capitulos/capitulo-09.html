@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Capítulo 9 — Questões resolvidas · 7º ano</title>
+<meta name="theme-color" content="#0b0c0e"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- Manrope: interface. Caveat, IBM Plex Mono e STIX Two Text: resolucoes animadas. -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Caveat:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=STIX+Two+Text:wght@400;500&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="../assets/css/base.css"/>
+<link rel="stylesheet" href="../assets/css/capitulo.css"/>
+<link rel="stylesheet" href="../assets/css/questao.css"/>
+
+<!-- Resolucoes: React local + um arquivo por questao + motor da rolagem.
+     defer preserva a ordem de execucao. -->
+<script defer src="../assets/vendor/react/react.production.min.js"></script>
+<script defer src="../assets/vendor/react/react-dom.production.min.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q02-equacao.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q06-prova.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q08-quantias.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q08-sistema.js"></script>
+<script defer src="../assets/js/questao-cena.js"></script>
+<script defer src="../assets/js/capitulo.js"></script>
+</head>
+
+<body data-capitulo="9">
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a class="back-link" href="../index.html" aria-label="Voltar ao início">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Início</span>
+    </a>
+    <div class="page-id">
+      <span class="page-kicker">7º ano</span>
+      <span class="page-title">Capítulo 9</span>
+    </div>
+
+    <div class="page-actions">
+      <!-- Aponta para o data-youtube da questao aberta (capitulo.js). -->
+      <a class="yt-link is-disabled" id="yt-link" target="_blank" rel="noopener" aria-disabled="true" title="Vídeo narrado em breve">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="#ff1f1f"/>
+          <path d="M10 8.6v6.8l5.8-3.4z" fill="#fff"/>
+        </svg>
+      </a>
+
+      <div class="q-menu">
+        <button type="button" class="q-menu-btn" id="q-menu-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="q-menu-list">
+          <span><span class="q-menu-prefixo">Questão </span><span class="q-menu-num">2</span></span>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="q-menu-list" id="q-menu-list" role="menu" aria-label="Questões do capítulo 9" hidden></ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="questoes">
+
+  <!-- ============================================================
+       Uma questao = um <article>. O menu do header e a navegacao
+       anterior/proxima sao montados a partir destes blocos.
+
+       id            ancora da URL (capitulo-09.html#q2)
+       data-youtube  link do video narrado; vazio = icone desativado
+       data-resumo   texto do menu, quando o enunciado tem formulas (opcional)
+       data-cena     id da resolucao animada em window.Questoes
+       ============================================================ -->
+
+  <article class="questao" id="q2" data-youtube=""
+           data-resumo="No conjunto dos números racionais, resolva a equação e calcule o valor de √(xˣ + x²).">
+    <header class="questao-intro">
+      <p class="questao-tema">Equações</p>
+      <h1 class="questao-titulo">Questão 2</h1>
+      <p class="questao-enunciado">
+        No conjunto dos números racionais, resolva a equação
+        <span class="mat-bloco">
+          <span class="mat-frac"><span>x − 3</span><span>5</span></span> −
+          <span class="mat-frac"><span>3(x + 1)</span><span>4</span></span> +
+          <span class="mat-frac"><span>1</span><span>2</span></span> = −
+          <span class="mat-frac"><span><i>x</i></span><span>10</span></span> −
+          <span class="mat-frac"><span>7 − x</span><span>20</span></span>
+        </span>
+        e calcule o valor de
+        <span class="mat-raiz"><span><i>x</i><sup><i>x</i></sup> + <i>x</i><sup>2</sup></span></span>.
+      </p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q02"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p><i>x</i> = <strong>−1</strong> e <span class="mat-raiz"><span><i>x</i><sup><i>x</i></sup> + <i>x</i><sup>2</sup></span></span> = <strong>0</strong></p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q6" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Sistemas de equações</p>
+      <h1 class="questao-titulo">Questão 6</h1>
+      <p class="questao-enunciado">Uma prova de múltipla escolha com 60 questões foi corrigida da seguinte forma: o aluno ganhava 5 pontos por questão que acertava e perdia 1 ponto por questão que errava ou deixava em branco. Se um aluno totalizou 210 pontos, o número de questões que ele acertou foi</p>
+      <ol class="questao-alternativas">
+        <li><span>a)</span> 30</li>
+        <li><span>b)</span> 35</li>
+        <li><span>c)</span> 40</li>
+        <li><span>d)</span> 45</li>
+      </ol>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q06"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>Alternativa <strong>d)</strong>: ele acertou <strong>45</strong> questões.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q8-quantias" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Equações com duas incógnitas</p>
+      <h1 class="questao-titulo">Questão 8</h1>
+      <p class="questao-enunciado">A diferença entre o dobro da quantia que Beatriz possui e a quantia que Cibele possui é de 12 reais. Escreva a equação da situação e verifique se o par ordenado (11, 10) é solução.</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q08-quantias"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>Equação: <strong>2<i>x</i> − <i>y</i> = 12</strong>. Sim, (11, 10) é solução, pois 2 · 11 − 10 = 12.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q8-sistema" data-youtube=""
+           data-resumo="Sendo o sistema 15x − 16y = 24 e 3x = 4y, com U = ℚ × ℚ, calcule o valor de x − y − 1.">
+    <header class="questao-intro">
+      <p class="questao-tema">Sistemas de equações</p>
+      <h1 class="questao-titulo">Questão 8</h1>
+      <p class="questao-enunciado">
+        Sendo o sistema
+        <span class="mat-sistema"><span>15<i>x</i> − 16<i>y</i> = 24</span><span>3<i>x</i> = 4<i>y</i></span></span>
+        com U = ℚ × ℚ, calcule o valor de <i>x</i> − <i>y</i> − 1.
+      </p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q08-sistema"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>(<i>x</i>, <i>y</i>) = (8, 6) e <i>x</i> − <i>y</i> − 1 = <strong>1</strong></p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Capítulo 12 — Questões resolvidas · 7º ano</title>
+<meta name="theme-color" content="#0b0c0e"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- Manrope: interface. Caveat, IBM Plex Mono e STIX Two Text: resolucoes animadas. -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Caveat:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=STIX+Two+Text:wght@400;500&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="../assets/css/base.css"/>
+<link rel="stylesheet" href="../assets/css/capitulo.css"/>
+<link rel="stylesheet" href="../assets/css/questao.css"/>
+
+<!-- Resolucoes: React local + um arquivo por questao + motor da rolagem.
+     defer preserva a ordem de execucao. -->
+<script defer src="../assets/vendor/react/react.production.min.js"></script>
+<script defer src="../assets/vendor/react/react-dom.production.min.js"></script>
+<script defer src="../assets/questoes/capitulo-12/q10-idades.js"></script>
+<script defer src="../assets/questoes/capitulo-12/q11-razao.js"></script>
+<script defer src="../assets/js/questao-cena.js"></script>
+<script defer src="../assets/js/capitulo.js"></script>
+</head>
+
+<body data-capitulo="12">
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a class="back-link" href="../index.html" aria-label="Voltar ao início">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Início</span>
+    </a>
+    <div class="page-id">
+      <span class="page-kicker">7º ano</span>
+      <span class="page-title">Capítulo 12</span>
+    </div>
+
+    <div class="page-actions">
+      <!-- Aponta para o data-youtube da questao aberta (capitulo.js). -->
+      <a class="yt-link is-disabled" id="yt-link" target="_blank" rel="noopener" aria-disabled="true" title="Vídeo narrado em breve">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="#ff1f1f"/>
+          <path d="M10 8.6v6.8l5.8-3.4z" fill="#fff"/>
+        </svg>
+      </a>
+
+      <div class="q-menu">
+        <button type="button" class="q-menu-btn" id="q-menu-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="q-menu-list">
+          <span><span class="q-menu-prefixo">Questão </span><span class="q-menu-num">10</span></span>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="q-menu-list" id="q-menu-list" role="menu" aria-label="Questões do capítulo 12" hidden></ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="questoes">
+
+  <!-- ============================================================
+       Uma questao = um <article>. O menu do header e a navegacao
+       anterior/proxima sao montados a partir destes blocos.
+
+       id            ancora da URL (capitulo-12.html#q10)
+       data-youtube  link do video narrado; vazio = icone desativado
+       data-resumo   texto do menu, quando o enunciado tem formulas (opcional)
+       data-cena     id da resolucao animada em window.Questoes
+       ============================================================ -->
+
+  <article class="questao" id="q10" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Razão e proporção</p>
+      <h1 class="questao-titulo">Questão 10</h1>
+      <p class="questao-enunciado">As idades de Vítor e Davi, nessa ordem, estão na razão de 3 para 4. Multiplicando a idade da pessoa mais nova por 5 e a idade da mais velha por 2 e somando os números assim obtidos, o resultado é 69 anos. Qual é a idade de Vítor e a de Davi?</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap12-q10"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>Vítor tem <strong>9 anos</strong> e Davi tem <strong>12 anos</strong>.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q11" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Razão e proporção</p>
+      <h1 class="questao-titulo">Questão 11</h1>
+      <p class="questao-enunciado">A razão entre dois números positivos é 3 : 4. Sabendo que o produto desses números é 192, determine-os.</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap12-q11"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>Os números são <strong>12</strong> e <strong>16</strong>.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+</main>
+
+</body>
+</html>

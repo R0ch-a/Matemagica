@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Matemática — Questões resolvidas · 7º ano</title>
+<meta name="description" content="Questões resolvidas dos capítulos 9 a 12 do livro de Matemática do 7º ano."/>
+<meta name="theme-color" content="#0b0c0e"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet"/>
+
+<!-- KaTeX renderiza as formulas. Sem internet, o JS mostra o LaTeX cru. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous"/>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="assets/css/base.css"/>
+<link rel="stylesheet" href="assets/css/home.css?v=3"/>
+</head>
+
+<body>
+
+<main class="hero" id="hero">
+  <!-- Camadas de fundo: imagem e vinheta. -->
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <!-- Palco das formulas. Preenchido pelo JS. -->
+  <div class="formulas" id="formulas" aria-hidden="true"></div>
+
+  <!-- Palavra central -->
+  <div class="hero-title">
+    <h1 class="title-word" id="title-word">
+      <span class="sr-only">Matemática</span>
+      <!-- A Mattilda nao tem o "á". A palavra fica inteira (quebrar em spans
+           desfaz o kerning da fonte) e o acento e' um hifen girado, posicionado
+           pelo JS sobre o sexto caractere. -->
+      <span class="title-glyphs" aria-hidden="true">Matematica<span class="acute">-</span></span>
+    </h1>
+  </div>
+
+  <!-- Canto superior esquerdo -->
+  <header class="hero-brand">
+    <p class="brand-title">Questões resolvidas</p>
+    <p class="brand-grade">7º ano</p>
+  </header>
+
+  <!-- Lateral direita: capitulos -->
+  <nav class="hero-chapters" aria-label="Capítulos">
+    <a class="chapter-card" href="capitulos/capitulo-09.html">
+      <span class="chapter-label">Capítulo</span>
+      <span class="chapter-num">09</span>
+      <span class="chapter-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="chapter-card" href="capitulos/capitulo-10.html">
+      <span class="chapter-label">Capítulo</span>
+      <span class="chapter-num">10</span>
+      <span class="chapter-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="chapter-card" href="capitulos/capitulo-11.html">
+      <span class="chapter-label">Capítulo</span>
+      <span class="chapter-num">11</span>
+      <span class="chapter-arrow" aria-hidden="true">→</span>
+    </a>
+    <a class="chapter-card" href="capitulos/capitulo-12.html">
+      <span class="chapter-label">Capítulo</span>
+      <span class="chapter-num">12</span>
+      <span class="chapter-arrow" aria-hidden="true">→</span>
+    </a>
+  </nav>
+
+  <!-- Canto inferior esquerdo -->
+  <a class="home-card" href="index.html" aria-label="Início">
+    <span class="home-card-label">Início</span>
+    <span class="home-card-img" aria-hidden="true"></span>
+  </a>
+</main>
+
+<script defer src="assets/js/home.js?v=3"></script>
+</body>
+</html>

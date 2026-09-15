@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Capítulo 11 — Questões resolvidas · 7º ano</title>
+<meta name="theme-color" content="#0b0c0e"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<!-- Manrope: interface. Caveat, IBM Plex Mono e STIX Two Text: resolucoes animadas. -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Caveat:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=STIX+Two+Text:wght@400;500&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="../assets/css/base.css"/>
+<link rel="stylesheet" href="../assets/css/capitulo.css"/>
+<link rel="stylesheet" href="../assets/css/questao.css"/>
+
+<!-- Resolucoes: React local + um arquivo por questao + motor da rolagem.
+     defer preserva a ordem de execucao. -->
+<script defer src="../assets/vendor/react/react.production.min.js"></script>
+<script defer src="../assets/vendor/react/react-dom.production.min.js"></script>
+<script defer src="../assets/questoes/capitulo-11/q01-poligonos-regulares.js"></script>
+<script defer src="../assets/questoes/capitulo-11/q02-poligonos-diagonais.js"></script>
+<script defer src="../assets/questoes/capitulo-11/q03-angulos-dbe.js"></script>
+<script defer src="../assets/questoes/capitulo-11/q07-triangulo.js"></script>
+<script defer src="../assets/questoes/capitulo-11/q08-classificacao.js"></script>
+<script defer src="../assets/js/questao-cena.js"></script>
+<script defer src="../assets/js/capitulo.js"></script>
+</head>
+
+<body data-capitulo="11">
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <a class="back-link" href="../index.html" aria-label="Voltar ao início">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Início</span>
+    </a>
+    <div class="page-id">
+      <span class="page-kicker">7º ano</span>
+      <span class="page-title">Capítulo 11</span>
+    </div>
+
+    <div class="page-actions">
+      <!-- Aponta para o data-youtube da questao aberta (capitulo.js). -->
+      <a class="yt-link is-disabled" id="yt-link" target="_blank" rel="noopener" aria-disabled="true" title="Vídeo narrado em breve">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="1.5" y="4.5" width="21" height="15" rx="4.5" fill="#ff1f1f"/>
+          <path d="M10 8.6v6.8l5.8-3.4z" fill="#fff"/>
+        </svg>
+      </a>
+
+      <div class="q-menu">
+        <button type="button" class="q-menu-btn" id="q-menu-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="q-menu-list">
+          <span><span class="q-menu-prefixo">Questão </span><span class="q-menu-num">1</span></span>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="q-menu-list" id="q-menu-list" role="menu" aria-label="Questões do capítulo 11" hidden></ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="questoes">
+
+  <!-- ============================================================
+       Uma questao = um <article>. O menu do header e a navegacao
+       anterior/proxima sao montados a partir destes blocos.
+
+       id            ancora da URL (capitulo-11.html#q1)
+       data-youtube  link do video narrado; vazio = icone desativado
+       data-resumo   texto do menu, quando o enunciado tem formulas (opcional)
+       data-cena     id da resolucao animada em window.Questoes
+       ============================================================ -->
+
+  <article class="questao" id="q1" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Polígonos regulares</p>
+      <h1 class="questao-titulo">Questão 1</h1>
+      <p class="questao-enunciado">Determine o valor de <i>x</i>, sabendo que os polígonos representados são regulares.</p>
+
+      <!-- Mesma geometria da figura da animacao (q01-poligonos-regulares.js), em repouso. -->
+      <figure class="questao-figura">
+        <svg viewBox="88 172 392 334" role="img" aria-label="Um octógono regular e um hexágono regular com um vértice em comum. No vértice, o ângulo x completa a volta entre os dois polígonos.">
+          <g fill="none" stroke="currentColor" stroke-width="2.8" stroke-linejoin="round" opacity="0.75"><polygon points="330.0,330.0 315.1,245.3 244.6,196.0 159.9,210.9 110.6,281.4 125.5,366.1 196.0,415.4 280.7,400.4"/><polygon points="330.0,330.0 280.7,400.4 317.0,478.4 402.7,485.9 452.0,415.4 415.7,337.5"/></g>
+          <path class="fig-destaque" fill="none" stroke-width="2.8" d="M 401.7 336.3 A 72 72 0 0 0 317.5 259.1"/>
+          <circle cx="330" cy="330" r="6" fill="currentColor"/>
+          <g font-family="'STIX Two Text', Georgia, serif" font-size="30" text-anchor="middle"><text class="fig-destaque" x="432.2" y="289.0" font-style="italic">x</text></g>
+        </svg>
+      </figure>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap11-q01"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p><i>x</i> = <strong>105°</strong></p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q2" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Soma dos ângulos internos</p>
+      <h1 class="questao-titulo">Questão 2</h1>
+      <p class="questao-enunciado">Compare o número de vértices de cada polígono com o número de diagonais que partem de um vértice.</p>
+
+      <!-- Quadrilatero, pentagono e hexagono com as diagonais de um vertice, como na animacao (q02-poligonos-diagonais.js). -->
+      <figure class="questao-figura">
+        <svg viewBox="20 20 860 260" role="img" aria-label="Um quadrilátero, um pentágono e um hexágono. Em cada um, as diagonais partem de um mesmo vértice.">
+          <polygon points="72.2,72.2 227.8,72.2 227.8,227.8 72.2,227.8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" opacity="0.75"/>
+          <g class="fig-destaque" stroke-width="2.4"><line x1="72.2" y1="72.2" x2="227.8" y2="227.8"/></g>
+          <g fill="currentColor" opacity="0.75"><circle cx="227.8" cy="72.2" r="4.5"/><circle cx="227.8" cy="227.8" r="4.5"/><circle cx="72.2" cy="227.8" r="4.5"/></g>
+          <circle class="fig-destaque-ponto" cx="72.2" cy="72.2" r="6.5"/>
+          <polygon points="385.3,61.0 514.7,61.0 554.6,184.0 450.0,260.0 345.4,184.0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" opacity="0.75"/>
+          <g class="fig-destaque" stroke-width="2.4"><line x1="385.3" y1="61.0" x2="554.6" y2="184.0"/><line x1="385.3" y1="61.0" x2="450.0" y2="260.0"/></g>
+          <g fill="currentColor" opacity="0.75"><circle cx="514.7" cy="61.0" r="4.5"/><circle cx="554.6" cy="184.0" r="4.5"/><circle cx="450.0" cy="260.0" r="4.5"/><circle cx="345.4" cy="184.0" r="4.5"/></g>
+          <circle class="fig-destaque-ponto" cx="385.3" cy="61.0" r="6.5"/>
+          <polygon points="695.0,54.7 805.0,54.7 860.0,150.0 805.0,245.3 695.0,245.3 640.0,150.0" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" opacity="0.75"/>
+          <g class="fig-destaque" stroke-width="2.4"><line x1="695.0" y1="54.7" x2="860.0" y2="150.0"/><line x1="695.0" y1="54.7" x2="805.0" y2="245.3"/><line x1="695.0" y1="54.7" x2="695.0" y2="245.3"/></g>
+          <g fill="currentColor" opacity="0.75"><circle cx="805.0" cy="54.7" r="4.5"/><circle cx="860.0" cy="150.0" r="4.5"/><circle cx="805.0" cy="245.3" r="4.5"/><circle cx="695.0" cy="245.3" r="4.5"/><circle cx="640.0" cy="150.0" r="4.5"/></g>
+          <circle class="fig-destaque-ponto" cx="695.0" cy="54.7" r="6.5"/>
+        </svg>
+      </figure>
+      <ol class="questao-itens">
+        <li><span>a)</span> O que se pode concluir sobre o número de triângulos formados nessa situação?</li>
+        <li><span>b)</span> Escreva uma fórmula para obter a soma das medidas dos ângulos internos (<i>S</i><sub>i</sub>) de um polígono regular com <i>n</i> vértices.</li>
+      </ol>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap11-q02"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>a) Um polígono de <i>n</i> vértices fica dividido em <strong><i>n</i> − 2 triângulos</strong>.</p>
+        <p>b) <strong><i>S</i><sub>i</sub> = (<i>n</i> − 2) · 180°</strong></p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q3" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Ângulos no triângulo</p>
+      <h1 class="questao-titulo">Questão 3</h1>
+      <p class="questao-enunciado">Na figura, o valor de 3<i>y</i> − <i>x</i>, em graus, é</p>
+
+      <!-- Mesma geometria da figura da animacao (q03-angulos-dbe.js), em repouso. -->
+      <figure class="questao-figura">
+        <svg viewBox="10 100 640 340" role="img" aria-label="Segmento DA com os pontos D, E e A. B está acima, ligado a D, E e A; C fica no prolongamento de AB. Em B, entre BC e BD, 80°; entre BD e BE, 36°. Os ângulos em E, entre EA e EB, e em A valem x; em D, o ângulo y.">
+          <g stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity="0.75"><line x1="422.0" y1="138.0" x2="580.0" y2="390.0"/><line x1="59.0" y1="390.0" x2="580.0" y2="390.0"/><line x1="59.0" y1="390.0" x2="475.0" y2="222.0"/><line x1="370.0" y1="390.0" x2="475.0" y2="222.0"/></g>
+          <g fill="none" stroke="currentColor" stroke-width="2.6"><path d="M 429.4 149.1 A 86 86 0 0 0 395.3 254.2"/><path d="M 413.8 246.7 A 66 66 0 0 0 440.0 278.0"/></g>
+          <g class="fig-destaque" fill="none" stroke-width="2.6"><path d="M 422.0 390.0 A 52 52 0 0 0 397.6 345.9"/><path d="M 550.3 342.5 A 56 56 0 0 0 524.0 390.0"/><path d="M 125.0 390.0 A 66 66 0 0 0 120.2 365.3"/></g>
+          <g font-family="'STIX Two Text', Georgia, serif" font-size="26" text-anchor="middle" fill="currentColor"><text x="368.5" y="195.4">80°</text><text x="404.5" y="289.1">36°</text><text class="fig-destaque" x="436.5" y="361.2" font-style="italic">x</text><text class="fig-destaque" x="510.0" y="359.2" font-style="italic">x</text><text class="fig-destaque" x="145.4" y="381.2" font-style="italic">y</text></g>
+          <g font-family="'IBM Plex Mono', monospace" font-size="24" fill="currentColor" opacity="0.7"><text x="396.0" y="132.0">C</text><text x="491.0" y="218.0">B</text><text x="594.0" y="416.0">A</text><text x="362.0" y="422.0">E</text><text x="33.0" y="400.0">D</text></g>
+        </svg>
+      </figure>
+      <ol class="questao-alternativas">
+        <li><span>a)</span> 8°</li>
+        <li><span>b)</span> 10°</li>
+        <li><span>c)</span> 12°</li>
+        <li><span>d)</span> 16°</li>
+      </ol>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap11-q03"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>Alternativa <strong>a)</strong>: 3<i>y</i> − <i>x</i> = <strong>8°</strong> (<i>x</i> = 58° e <i>y</i> = 22°).</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q7" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Ângulos no triângulo</p>
+      <h1 class="questao-titulo">Questão 7</h1>
+      <p class="questao-enunciado">Determine as medidas <i>x</i> e <i>y</i> dos ângulos assinalados na figura a seguir.</p>
+
+      <!-- Mesma geometria da figura da animacao (q07-triangulo.js), em repouso. -->
+      <figure class="questao-figura">
+        <svg viewBox="20 120 560 300" role="img" aria-label="Triângulo com a base sobre uma reta. No vértice da esquerda, o ângulo externo mede 137° e o interno é x; no vértice de cima, 28°; no vértice da direita, o ângulo y.">
+          <g stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity="0.75"><line x1="60.0" y1="360.0" x2="520.0" y2="360.0"/><line x1="200.0" y1="360.0" x2="406.0" y2="168.0"/><line x1="340.0" y1="360.0" x2="406.0" y2="168.0"/></g>
+          <g fill="none" stroke="currentColor" stroke-width="2.6"><path d="M 241.0 321.8 A 56 56 0 0 0 144.0 360.0"/><path d="M 365.0 206.2 A 56 56 0 0 0 387.8 221.0"/></g>
+          <g class="fig-destaque" fill="none" stroke-width="2.6"><path d="M 240.0 360.0 A 40 40 0 0 0 229.3 332.7"/><path d="M 354.3 318.4 A 44 44 0 0 0 296.0 360.0"/></g>
+          <g font-family="'STIX Two Text', Georgia, serif" font-size="27" text-anchor="middle" fill="currentColor"><text x="164.8" y="270.7">137°</text><text x="355.9" y="245.2">28°</text><text class="fig-destaque" x="254" y="349" font-style="italic">x</text><text class="fig-destaque" x="305" y="320" font-style="italic">y</text></g>
+        </svg>
+      </figure>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap11-q07"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p><i>x</i> = <strong>43°</strong> e <i>y</i> = <strong>109°</strong></p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q8" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Classificação de triângulos</p>
+      <h1 class="questao-titulo">Questão 8</h1>
+      <p class="questao-enunciado">As medidas dos ângulos internos de um triângulo podem ser representadas por 5<i>x</i>, 2<i>x</i> − 3° e 2<i>x</i> + 3°. Esse triângulo é retângulo, obtusângulo ou acutângulo?</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap11-q08"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>O triângulo é <strong>obtusângulo</strong>: seus ângulos medem 100°, 37° e 43°.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+</main>
+
+</body>
+</html>
