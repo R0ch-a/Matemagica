@@ -22,13 +22,14 @@
 <script defer src="../assets/questoes/capitulo-11/q01-poligonos-regulares.js"></script>
 <script defer src="../assets/questoes/capitulo-11/q02-poligonos-diagonais.js"></script>
 <script defer src="../assets/questoes/capitulo-11/q03-angulos-dbe.js"></script>
+<script defer src="../assets/questoes/capitulo-11/q04-angulo-x.js"></script>
 <script defer src="../assets/questoes/capitulo-11/q07-triangulo.js"></script>
 <script defer src="../assets/questoes/capitulo-11/q08-classificacao.js"></script>
 <script defer src="../assets/js/questao-cena.js"></script>
-<script defer src="../assets/js/capitulo.js"></script>
+<script defer src="../assets/js/capitulo.js?v=2"></script>
 </head>
 
-<body data-capitulo="11">
+<body data-capitulo="11" data-livro="3">
 
 <header class="page-header">
   <div class="page-header-inner">
@@ -69,11 +70,13 @@
 
        id            ancora da URL (capitulo-11.html#q1)
        data-youtube  link do video narrado; vazio = icone desativado
+       data-pagina   pagina no livro; aparece no menu junto com o livro
+       data-livro    livro desta questao, se diferente do data-livro do <body>
        data-resumo   texto do menu, quando o enunciado tem formulas (opcional)
        data-cena     id da resolucao animada em window.Questoes
        ============================================================ -->
 
-  <article class="questao" id="q1" data-youtube="">
+  <article class="questao" id="q1" data-pagina="24" data-youtube="">
     <header class="questao-intro">
       <p class="questao-tema">Polígonos regulares</p>
       <h1 class="questao-titulo">Questão 1</h1>
@@ -105,7 +108,7 @@
     </footer>
   </article>
 
-  <article class="questao" id="q2" data-youtube="">
+  <article class="questao" id="q2" data-pagina="20" data-youtube="">
     <header class="questao-intro">
       <p class="questao-tema">Soma dos ângulos internos</p>
       <h1 class="questao-titulo">Questão 2</h1>
@@ -150,7 +153,7 @@
     </footer>
   </article>
 
-  <article class="questao" id="q3" data-youtube="">
+  <article class="questao" id="q3" data-pagina="24" data-youtube="">
     <header class="questao-intro">
       <p class="questao-tema">Ângulos no triângulo</p>
       <h1 class="questao-titulo">Questão 3</h1>
@@ -189,7 +192,74 @@
     </footer>
   </article>
 
-  <article class="questao" id="q7" data-youtube="">
+  <article class="questao" id="q4" data-pagina="25" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Polígonos regulares</p>
+      <h1 class="questao-titulo">Questão 4</h1>
+      <p class="questao-enunciado">Determine a medida do ângulo <i>x</i> em cada uma das figuras seguintes, sabendo que:</p>
+      <ol class="questao-itens">
+        <li><span>a)</span> ABCD e ABE são regulares;</li>
+        <li><span>b)</span> ABCDE é regular.</li>
+      </ol>
+
+      <!-- Mesma geometria das figuras da animacao (q04-angulo-x.js), em repouso. -->
+      <div class="questao-figuras">
+        <figure class="questao-figura">
+          <svg viewBox="30 90 390 380" role="img" aria-label="Quadrado ABCD com o triângulo equilátero ABE construído sobre o lado AB, com E dentro do quadrado. O ângulo x é o ângulo DEA, no vértice E, entre os segmentos ED e EA.">
+          <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" opacity="0.75">
+            <polygon points="80.0,420.0 380.0,420.0 380.0,120.0 80.0,120.0"/>
+            <line x1="80.0" y1="420.0" x2="230.0" y2="160.2"/>
+            <line x1="380.0" y1="420.0" x2="230.0" y2="160.2"/>
+            <line x1="80.0" y1="120.0" x2="230.0" y2="160.2"/>
+          </g>
+          <path class="fig-destaque" fill="none" stroke-width="2.6" d="M 175.9 145.7 A 56 56 0 0 0 202.0 208.7"/>
+          <g font-family="'STIX Two Text', Georgia, serif" font-size="28" text-anchor="middle">
+            <text class="fig-destaque" x="145.0" y="204.4" font-style="italic">x</text>
+          </g>
+          <g font-family="'STIX Two Text', Georgia, serif" font-size="30" fill="currentColor" opacity="0.7">
+            <text x="46.0" y="454.0">A</text><text x="394.0" y="454.0">B</text><text x="394.0" y="108.0">C</text><text x="46.0" y="108.0">D</text><text x="246.0" y="154.2">E</text>
+          </g>
+        </svg>
+          <figcaption>a) quadrado ABCD e triângulo ABE</figcaption>
+        </figure>
+        <figure class="questao-figura">
+          <svg viewBox="20 40 520 520" role="img" aria-label="Pentágono regular ABCDE com as diagonais EB e EC traçadas. O ângulo x é o ângulo BEC, no vértice E, entre as duas diagonais.">
+          <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" opacity="0.75">
+            <polygon points="150.7,478.0 409.3,478.0 489.2,232.0 280.0,80.0 70.8,232.0"/>
+            <line x1="70.8" y1="232.0" x2="489.2" y2="232.0"/>
+            <line x1="70.8" y1="232.0" x2="409.3" y2="478.0"/>
+          </g>
+          <path class="fig-destaque" fill="none" stroke-width="2.6" d="M 154.9 293.1 A 104 104 0 0 0 174.8 232.0"/>
+          <g font-family="'STIX Two Text', Georgia, serif" font-size="28" text-anchor="middle">
+            <text class="fig-destaque" x="196.3" y="281.8" font-style="italic">x</text>
+          </g>
+          <g font-family="'STIX Two Text', Georgia, serif" font-size="30" fill="currentColor" opacity="0.7">
+            <text x="136.7" y="518.0">A</text><text x="403.3" y="518.0">B</text><text x="507.2" y="240.0">C</text><text x="270.0" y="62.0">D</text><text x="30.8" y="240.0">E</text>
+          </g>
+        </svg>
+          <figcaption>b) pentágono ABCDE</figcaption>
+        </figure>
+      </div>
+
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap11-q04"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>a) <i>x</i> = <strong>75°</strong></p>
+        <p>b) <i>x</i> = <strong>36°</strong></p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q7" data-pagina="15" data-youtube="">
     <header class="questao-intro">
       <p class="questao-tema">Ângulos no triângulo</p>
       <h1 class="questao-titulo">Questão 7</h1>
@@ -221,7 +291,7 @@
     </footer>
   </article>
 
-  <article class="questao" id="q8" data-youtube="">
+  <article class="questao" id="q8" data-pagina="15" data-youtube="">
     <header class="questao-intro">
       <p class="questao-tema">Classificação de triângulos</p>
       <h1 class="questao-titulo">Questão 8</h1>

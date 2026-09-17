@@ -21,12 +21,15 @@
 <script defer src="../assets/vendor/react/react-dom.production.min.js"></script>
 <script defer src="../assets/questoes/capitulo-10/q01-sexagesimal.js"></script>
 <script defer src="../assets/questoes/capitulo-10/q03-opostos.js"></script>
+<script defer src="../assets/questoes/capitulo-10/q07-complemento.js"></script>
+<script defer src="../assets/questoes/capitulo-10/q08-suplementares.js"></script>
 <script defer src="../assets/questoes/capitulo-10/q13-angulos.js"></script>
+<script defer src="../assets/questoes/capitulo-10/q14-paralelas.js"></script>
 <script defer src="../assets/js/questao-cena.js"></script>
-<script defer src="../assets/js/capitulo.js"></script>
+<script defer src="../assets/js/capitulo.js?v=2"></script>
 </head>
 
-<body data-capitulo="10">
+<body data-capitulo="10" data-livro="2">
 
 <header class="page-header">
   <div class="page-header-inner">
@@ -67,11 +70,13 @@
 
        id            ancora da URL (capitulo-10.html#q1)
        data-youtube  link do video narrado; vazio = icone desativado
+       data-pagina   pagina no livro; aparece no menu junto com o livro
+       data-livro    livro desta questao, se diferente do data-livro do <body>
        data-resumo   texto do menu, quando o enunciado tem formulas (opcional)
        data-cena     id da resolucao animada em window.Questoes
        ============================================================ -->
 
-  <article class="questao" id="q1" data-youtube="">
+  <article class="questao" id="q1" data-pagina="112" data-youtube="">
     <header class="questao-intro">
       <p class="questao-tema">Medidas de ângulos</p>
       <h1 class="questao-titulo">Questão 1</h1>
@@ -93,7 +98,7 @@
     </footer>
   </article>
 
-  <article class="questao" id="q3" data-youtube="">
+  <article class="questao" id="q3" data-pagina="105" data-youtube="">
     <header class="questao-intro">
       <p class="questao-tema">Ângulos opostos pelo vértice</p>
       <h1 class="questao-titulo">Questão 3</h1>
@@ -115,7 +120,56 @@
     </footer>
   </article>
 
-  <article class="questao" id="q13" data-youtube="">
+  <article class="questao" id="q7" data-pagina="114" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Complemento e suplemento</p>
+      <h1 class="questao-titulo">Questão 7</h1>
+      <p class="questao-enunciado">Leia atentamente os enunciados a seguir. Depois, responda ao que se pede.</p>
+      <ol class="questao-itens">
+        <li><span>a)</span> O dobro da medida do suplemento de um ângulo vale 240°. Quanto mede esse ângulo?</li>
+        <li><span>b)</span> A quinta parte da medida do complemento de um ângulo vale 13°. Quanto mede esse ângulo?</li>
+      </ol>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap10-q07"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>a) O ângulo mede <strong>60°</strong>.</p>
+        <p>b) O ângulo mede <strong>25°</strong>.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q8" data-pagina="114" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Ângulos suplementares e opostos pelo vértice</p>
+      <h1 class="questao-titulo">Questão 8</h1>
+      <p class="questao-enunciado">Dois ângulos suplementares são de tal modo que o menor é metade da medida do maior. Sabendo que a metade da medida do menor representa o suplemento da soma de dois ângulos opostos pelo vértice, qual a medida de cada um desses ângulos?</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap10-q08"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>Os ângulos suplementares medem <strong>60°</strong> e <strong>120°</strong>, e cada ângulo oposto pelo vértice mede <strong>75°</strong>.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q13" data-pagina="115" data-youtube="">
     <header class="questao-intro">
       <p class="questao-tema">Retas paralelas e transversais · IFPE (adaptada)</p>
       <h1 class="questao-titulo">Questão 13</h1>
@@ -168,6 +222,61 @@
       <details class="questao-resposta">
         <summary>Ver resposta</summary>
         <p>Alternativa <strong>a)</strong>: <i>x</i> = <strong>140°</strong>.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q14" data-pagina="115" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Retas paralelas e transversais</p>
+      <h1 class="questao-titulo">Questão 14</h1>
+      <p class="questao-enunciado">As retas <i>r</i> e <i>s</i> são paralelas, cortadas pela transversal <i>t</i>. Se a medida do ângulo <span class="mat-chapeu">B</span> é o triplo da medida do ângulo <span class="mat-chapeu">A</span>, então med(<span class="mat-chapeu">B</span>) − med(<span class="mat-chapeu">A</span>) vale</p>
+
+      <!-- Mesma geometria da figura da animacao (q14-paralelas.js), em repouso. -->
+      <figure class="questao-figura">
+        <svg viewBox="30 85 570 390" role="img" aria-label="Retas paralelas r e s cortadas pela transversal t. Em r, o ângulo Â fica acima de r e à direita de t; em s, o ângulo B̂ fica acima de s e à esquerda de t.">
+          <g stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity="0.75">
+            <line x1="70" y1="180" x2="560" y2="180"/>
+            <line x1="40" y1="360" x2="530" y2="360"/>
+            <line x1="258" y1="423" x2="456" y2="126"/>
+          </g>
+          <g class="fig-destaque" fill="none" stroke-width="2.6">
+            <path d="M 466.0 180.0 A 46 46 0 0 0 445.5 141.7"/>
+            <path d="M 328.8 316.7 A 52 52 0 0 0 248.0 360.0"/>
+          </g>
+          <g font-family="'STIX Two Text', Georgia, serif" font-size="27" text-anchor="middle">
+            <text class="fig-destaque" x="484.7" y="157.4">Â</text>
+            <text class="fig-destaque" x="264.9" y="297.1">B</text>
+            <text class="fig-destaque" x="264.9" y="291.1" font-size="26">ˆ</text>
+          </g>
+          <g font-family="'IBM Plex Mono', monospace" font-size="25" fill="currentColor" opacity="0.7">
+            <text x="574" y="188">r</text>
+            <text x="544" y="368">s</text>
+            <text x="470" y="120">t</text>
+          </g>
+        </svg>
+      </figure>
+
+      <ol class="questao-alternativas">
+        <li><span>a)</span> 90°</li>
+        <li><span>b)</span> 85°</li>
+        <li><span>c)</span> 80°</li>
+        <li><span>d)</span> 75°</li>
+        <li><span>e)</span> 60°</li>
+      </ol>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap10-q14"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>Alternativa <strong>a)</strong>: med(<span class="mat-chapeu">B</span>) − med(<span class="mat-chapeu">A</span>) = <strong>90°</strong> (<span class="mat-chapeu">A</span> = 45° e <span class="mat-chapeu">B</span> = 135°).</p>
       </details>
       <nav class="questao-nav" aria-label="Outras questões"></nav>
     </footer>

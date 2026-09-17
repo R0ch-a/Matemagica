@@ -25,10 +25,10 @@ Cada questão tem um endereço próprio (por exemplo, `capitulos/capitulo-12.htm
 
 | Capítulo | Questões |
 |---|---|
-| 9 | 2 · Equações — 6 · Sistemas de equações — 8 · Equações com duas incógnitas — 8 · Sistemas de equações |
-| 10 | 1 · Medidas de ângulos — 3 · Ângulos opostos pelo vértice — 13 · Retas paralelas e transversais |
-| 11 | 1 · Polígonos regulares — 2 · Soma dos ângulos internos — 3 · Ângulos no triângulo — 7 · Ângulos no triângulo — 8 · Classificação de triângulos |
-| 12 | 10 · Razão e proporção — 11 · Razão e proporção |
+| 9 · livro 2 | 4 (p. 75) — 3 a (p. 83) — 2 (p. 84) — 6, 7 e 8 (p. 85) — 9 a (p. 86) · **livro suplementar 2**: 8 (p. 47) — 11 e 12 a, b, c (p. 49) |
+| 10 · livro 2 | 3 (p. 105) — 1 (p. 112) — 7 e 8 (p. 114) — 13 e 14 (p. 115) |
+| 11 · livro 3 | 7 e 8 (p. 15) — 2 (p. 20) — 1 e 3 (p. 24) — 4 (p. 25) |
+| 12 · livro 3 | 1 e 3 (p. 35) — 3 c, 3 f e 4 (p. 39) — 10 (p. 44) |
 
 ## Rodando localmente
 
@@ -59,6 +59,7 @@ assets/
   questoes/
     capitulo-XX/qNN-nome.js uma resolução animada por arquivo
   vendor/react/             React 18 (usado só para desenhar as animações)
+  vendor/lottie/            lottie-web (ícones animados de algumas questões)
   fonts/                    fonte Mattilda (título da página inicial)
   images/                   fundo da página inicial e imagem do card "Início"
 ```
@@ -85,6 +86,7 @@ Os arquivos da página inicial são carregados com um número de versão (`home.
 - HTML, CSS e JavaScript puros
 - [React 18](https://react.dev/) (cópia local) para desenhar as resoluções animadas
 - [KaTeX](https://katex.org/) para as fórmulas da página inicial
+- [lottie-web](https://github.com/airbnb/lottie-web) (MIT, cópia local) para os ícones animados de algumas questões
 - Fontes: Mattilda (título), Manrope (interface), Caveat, IBM Plex Mono e STIX Two Text (animações)
 
 ## Créditos

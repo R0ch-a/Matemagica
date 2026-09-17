@@ -1,8 +1,8 @@
 /* ============================================================
-   Capitulo 12 · Questao 11 — resolucao animada
+   Capitulo 12 · Questao 3 — resolucao animada
    Convertida da composicao original (JSX -> JS). Desenha a tela
-   1920x1080 como funcao do tempo T; o player vem de
-   assets/js/questao-player.js.
+   1920x1080 como funcao do tempo T; quem controla T e' a rolagem,
+   em assets/js/questao-cena.js.
    ============================================================ */
 (function () {
   /* global React, useComposition, animate, Easing, clamp */
@@ -79,56 +79,44 @@
     c: c || 'n'
   });
   const STEPS = [{
-    label: 'enunciado',
-    note: 'a e b positivos',
+    label: 'o desempenho pedido',
+    note: 'nessa ordem',
     tall: true,
-    toks: [fr('a', 'b', 'n', true, true), rm(' = '), fr('3', '4'), rm('      '), it('a'), rm(' · '), it('b'), rm(' = 192')]
+    toks: [rm('desempenho = ', 'r'), fr('acertos', 'erros', 'm')]
   }, {
-    label: 'uma só incógnita',
-    note: 'razão 3 : 4',
+    label: 'os erros de Júnior',
+    note: '12 tentativas',
     tall: true,
-    toks: [cs([it('a', 'm'), rm(' = 3k', 'm')], [it('b', 'm'), rm(' = 4k', 'm')], 'm')]
+    toks: [rm('12 − 9 = ', 'r'), rm('3', 'm'), rm(' erros', 'r')]
   }, {
-    label: 'substituir no produto',
-    note: '',
-    toks: [rm('3k', 'm'), rm(' · ', 'r'), rm('4k', 'm'), rm(' = 192', 'r')]
-  }, {
-    label: 'multiplicar',
-    note: '3 · 4 = 12',
-    toks: [rm('12', 'm'), pw('k', '2', 'm', true), rm(' = 192', 'r')]
-  }, {
-    label: 'dividir por 12',
-    note: '',
-    toks: [pw('k', '2', 'r', true), rm(' = ', 'r'), rm('16', 'm')]
-  }, {
-    label: 'raiz nos dois lados',
-    note: 'k > 0',
+    label: 'a razão de Júnior',
+    note: 'acertos : erros',
     tall: true,
-    toks: [it('k', 'r'), rm(' = ', 'r'), sq([rm('16', 'm')], 'm'), rm(' = ', 'r'), rm('4', 'm')]
+    toks: [fr('9', '3', 'r'), rm(' = ', 'r'), rm('3', 'm')]
   }, {
-    label: 'voltar nas expressões',
+    label: 'os erros de João',
+    note: '16 tentativas',
+    tall: true,
+    toks: [rm('16 − 12 = ', 'r'), rm('4', 'm'), rm(' erros', 'r')]
+  }, {
+    label: 'a razão de João',
+    note: 'a mesma ordem',
+    tall: true,
+    toks: [fr('12', '4', 'r'), rm(' = ', 'r'), rm('3', 'm')]
+  }, {
+    label: 'comparar as duas razões',
     note: '',
     tall: true,
-    toks: [cs([it('a', 'r'), rm(' = 3 · ', 'r'), rm('4', 'm')], [it('b', 'r'), rm(' = 4 · ', 'r'), rm('4', 'm')], 'r')]
+    toks: [fr('9', '3', 'r'), rm('  =  ', 'm'), fr('12', '4', 'r'), rm('    →    ', 'r'), rm('3 = 3', 'm')]
   }, {
     label: 'resultado',
     note: '',
     tall: true,
-    toks: [cs([it('a', 'o'), rm(' = ', 'o'), rm('12', 'o')], [it('b', 'o'), rm(' = ', 'o'), rm('16', 'o')], 'o')]
-  }, {
-    label: 'verificação',
-    note: '',
-    tall: true,
-    toks: [rm('12 · 16 = 192', 'r'), rm('      ', 'r'), fr('12', '16', 'r'), rm(' = ', 'r'), fr('3', '4', 'r')]
-  }, {
-    label: 'conclusão',
-    note: '',
-    tall: true,
-    toks: [rm('∴  os números são 12 e 16', 'o')]
+    toks: [rm('∴  os dois tiveram o mesmo desempenho', 'o')]
   }];
-  const CUE_NAMES = ['Enunciado', 'Incognita', 'Substituir', 'Multiplicar', 'Dividir', 'Raiz', 'Voltar', 'Resultado', 'Verificacao', 'Conclusao'];
-  const ACTIVE_Y = 700;
-  const NAT_H = i => STEPS[i].tall ? 200 : STEPS[i].label.length > 14 ? 176 : 128;
+  const CUE_NAMES = ['Definicao', 'ErrosJ', 'RazaoJ', 'ErrosO', 'RazaoO', 'Comparar', 'Resultado'];
+  const ACTIVE_Y = 660;
+  const NAT_H = i => STEPS[i].label.length > 20 ? 200 : 178;
   function Tok({
     tok,
     col
@@ -306,7 +294,7 @@
     const age = clamp(d, 0, 1);
     const op = d < 0 ? clamp(1 + d * 1.7, 0, 1) : clamp((3.9 - d) / 0.8, 0, 1) * (1 - 0.2 * clamp(d, 0, 1));
     const scale = 1 - 0.46 * clamp(d, 0, 1);
-    const size = step.tall ? 52 : 58;
+    const size = 50;
     const active = clamp(1 - Math.abs(d) * 1.4, 0, 1);
     const col = role => {
       if (role === 'o') return or;
@@ -316,9 +304,9 @@
     return /*#__PURE__*/React.createElement("div", {
       style: {
         position: 'absolute',
-        left: 56,
+        left: 60,
         top: y,
-        width: 1830,
+        width: 1400,
         display: 'flex',
         alignItems: 'center',
         flexWrap: 'nowrap',
@@ -328,14 +316,14 @@
       }
     }, /*#__PURE__*/React.createElement("div", {
       style: {
-        width: 400,
+        width: 420,
         textAlign: 'right',
         paddingRight: 40,
         fontFamily: "'Caveat', cursive",
-        fontSize: 76,
+        fontSize: 58,
         color: mix('#ffffff', DIM, 1 - active),
         flexShrink: 0,
-        lineHeight: 0.98
+        lineHeight: 1.02
       }
     }, step.label), /*#__PURE__*/React.createElement("div", {
       style: {
@@ -352,13 +340,13 @@
       col: col
     }))), step.note ? /*#__PURE__*/React.createElement("div", {
       style: {
-        marginLeft: 40,
+        marginLeft: 34,
         fontFamily: "'Courier New', Courier, monospace",
-        fontSize: 30,
+        fontSize: 24,
         color: GRAY,
         opacity: active,
         whiteSpace: 'pre-line',
-        maxWidth: 300,
+        maxWidth: 210,
         lineHeight: 1.35,
         flexShrink: 0
       }
@@ -366,62 +354,106 @@
   }
   function Pinned({
     T,
-    CUES
+    CUES,
+    cy,
+    or
   }) {
-    const items = [{
-      label: 'nos dois lados',
-      text: '÷ 12',
-      in: CUES.Dividir - 0.2,
-      out: CUES.Raiz - 0.3
+    const fin = MOTION.glide(0, 1, CUES.Resultado - 0.3, CUES.Resultado + 0.6)(T);
+    const cards = [{
+      nome: 'JÚNIOR',
+      acertos: '9',
+      tent: '12',
+      erros: '3',
+      razao: '3',
+      inErros: CUES.ErrosJ - 0.1,
+      inRazao: CUES.RazaoJ - 0.1
     }, {
-      label: 'nos dois lados',
-      text: '√',
-      in: CUES.Raiz - 0.2,
-      out: CUES.Voltar - 0.3
-    }, {
-      label: 'k encontrado',
-      text: 'k = 4',
-      in: CUES.Raiz + 0.8,
-      out: CUES.Conclusao - 0.3
+      nome: 'JOÃO',
+      acertos: '12',
+      tent: '16',
+      erros: '4',
+      razao: '3',
+      inErros: CUES.ErrosO - 0.1,
+      inRazao: CUES.RazaoO - 0.1
     }];
+    const inP = MOTION.enter(0, 1, 0.4, 1.6)(T);
     return /*#__PURE__*/React.createElement("div", {
       style: {
         position: 'absolute',
         right: 110,
-        top: 320,
-        width: 420,
+        top: 380,
+        width: 360,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'flex-end',
-        gap: 34
+        gap: 54,
+        opacity: inP
       }
-    }, items.map((item, i) => {
-      const op = MOTION.enter(0, 1, item.in, item.in + 0.7)(T) * (1 - MOTION.glide(0, 1, item.out, item.out + 0.6)(T));
-      const dy = MOTION.pop(28, 0, item.in, item.in + 0.9)(T);
+    }, cards.map((c, i) => {
+      const opE = MOTION.enter(0, 1, c.inErros, c.inErros + 0.8)(T);
+      const opR = MOTION.enter(0, 1, c.inRazao, c.inRazao + 0.8)(T);
+      const colE = mix(INK, cy, 0.85 * opE);
+      const colR = mix(mix(INK, cy, 0.85 * opR), or, fin);
       return /*#__PURE__*/React.createElement("div", {
         key: i,
         style: {
-          opacity: op,
-          transform: `translateY(${dy}px)`,
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-end'
+          gap: 12
         }
       }, /*#__PURE__*/React.createElement("div", {
         style: {
-          fontFamily: "'Courier New', Courier, monospace",
-          fontSize: 40,
-          color: '#ffffff',
-          lineHeight: 1
+          fontFamily: "'IBM Plex Mono', monospace",
+          fontSize: 24,
+          color: GRAY,
+          letterSpacing: '0.12em'
         }
-      }, item.label), /*#__PURE__*/React.createElement("div", {
+      }, c.nome), /*#__PURE__*/React.createElement("div", {
         style: {
           fontFamily: "'Courier New', Courier, monospace",
-          fontSize: 46,
-          color: GRAY,
-          marginTop: 10
+          fontSize: 24,
+          color: mix(DIM, GRAY, 0.9)
         }
-      }, item.text));
+      }, c.acertos + ' de ' + c.tent + ' tentativas'), /*#__PURE__*/React.createElement("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'baseline',
+          gap: 16,
+          opacity: opE
+        }
+      }, /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontFamily: "'Courier New', Courier, monospace",
+          fontSize: 24,
+          color: GRAY
+        }
+      }, "erros"), /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontFamily: "'STIX Two Text', Georgia, serif",
+          fontSize: 44,
+          color: colE,
+          lineHeight: 1
+        }
+      }, c.erros)), /*#__PURE__*/React.createElement("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'baseline',
+          gap: 16,
+          opacity: opR
+        }
+      }, /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontFamily: "'Courier New', Courier, monospace",
+          fontSize: 24,
+          color: GRAY
+        }
+      }, "raz\xE3o"), /*#__PURE__*/React.createElement("span", {
+        style: {
+          fontFamily: "'STIX Two Text', Georgia, serif",
+          fontSize: 56,
+          color: colR,
+          lineHeight: 1
+        }
+      }, c.razao)));
     }));
   }
   function Board({
@@ -476,7 +508,7 @@
         color: cy,
         letterSpacing: '0.14em'
       }
-    }, "QUEST\xC3O 11"), /*#__PURE__*/React.createElement("div", {
+    }, "QUEST\xC3O 3"), /*#__PURE__*/React.createElement("div", {
       style: {
         fontFamily: "'STIX Two Text', Georgia, serif",
         fontSize: 31,
@@ -485,11 +517,11 @@
         maxWidth: 1500,
         lineHeight: 1.35
       }
-    }, "A raz\xE3o entre dois n\xFAmeros positivos \xE9 3 : 4. Sabendo que o produto desses n\xFAmeros \xE9 192, determine-os.")), /*#__PURE__*/React.createElement("div", {
+    }, "Em uma partida de handebol, J\xFAnior conseguiu marcar 9 gols de 12 tentativas. Jo\xE3o, por sua vez, tentou 16 vezes e marcou 12 gols. Se o desempenho dos jogadores \xE9 dado pela raz\xE3o entre acertos e erros, nessa ordem, quem teve o melhor desempenho na partida?")), /*#__PURE__*/React.createElement("div", {
       style: {
         position: 'absolute',
         left: 96,
-        top: 224,
+        top: 266,
         width: 1728,
         height: 2,
         background: '#333333'
@@ -498,7 +530,7 @@
       style: {
         position: 'absolute',
         left: 0,
-        top: 252,
+        top: 296,
         right: 0,
         bottom: 0,
         overflow: 'hidden'
@@ -508,12 +540,14 @@
       step: s,
       i: i,
       k: k,
-      y: ACTIVE_Y - 252 + ctr[i] - base,
+      y: ACTIVE_Y - 296 + ctr[i] - base,
       cy: cy,
       or: or
     }))), /*#__PURE__*/React.createElement(Pinned, {
       T: T,
-      CUES: CUES
+      CUES: CUES,
+      cy: cy,
+      or: or
     })), tw.legenda ? /*#__PURE__*/React.createElement("div", {
       style: {
         position: 'absolute',
@@ -544,52 +578,40 @@
     }), /*#__PURE__*/React.createElement("span", null, l)))) : null);
   }
   window.Questoes = window.Questoes || {};
-  window.Questoes["cap12-q11"] = {
+  window.Questoes["cap12-q03"] = {
     Board: Board,
     passos: STEPS.map(s => s.label),
     bg: BG,
     width: 1920,
     height: 1080,
     scenes: [{
-      "name": "Enunciado",
+      "name": "Definicao",
+      "dur": 6,
+      "desc": "O desempenho e a razao entre acertos e erros, nessa ordem"
+    }, {
+      "name": "ErrosJ",
       "dur": 5.5,
-      "desc": "A razão a sobre b igual a 3 sobre 4 e o produto 192 aparecem"
+      "desc": "Os erros de Junior: 12 tentativas menos 9 gols da 3 erros"
     }, {
-      "name": "Incognita",
-      "dur": 5,
-      "desc": "Os dois números são escritos como 3k e 4k"
+      "name": "RazaoJ",
+      "dur": 6,
+      "desc": "A razao de Junior: 9 sobre 3 igual a 3"
     }, {
-      "name": "Substituir",
-      "dur": 4.5,
-      "desc": "3k vezes 4k entra no produto igual a 192"
+      "name": "ErrosO",
+      "dur": 5.5,
+      "desc": "Os erros de Joao: 16 tentativas menos 12 gols da 4 erros"
     }, {
-      "name": "Multiplicar",
-      "dur": 4.5,
-      "desc": "O produto vira 12 k ao quadrado igual a 192"
+      "name": "RazaoO",
+      "dur": 6,
+      "desc": "A razao de Joao: 12 sobre 4 tambem igual a 3"
     }, {
-      "name": "Dividir",
-      "dur": 4.5,
-      "desc": "Dividindo os dois lados por 12: k ao quadrado igual a 16"
-    }, {
-      "name": "Raiz",
-      "dur": 5,
-      "desc": "Raiz nos dois lados: k igual a 4, pois k é positivo"
-    }, {
-      "name": "Voltar",
-      "dur": 5,
-      "desc": "O k volta em 3k e 4k"
+      "name": "Comparar",
+      "dur": 6.5,
+      "desc": "Comparando as duas razoes: 9 sobre 3 e igual a 12 sobre 4"
     }, {
       "name": "Resultado",
-      "dur": 5,
-      "desc": "Os números 12 e 16 aparecem em laranja"
-    }, {
-      "name": "Verificacao",
-      "dur": 5,
-      "desc": "Conferindo: 12 vezes 16 dá 192 e a razão se reduz a 3 sobre 4"
-    }, {
-      "name": "Conclusao",
-      "dur": 5.5,
-      "desc": "O portanto encerra: os números são 12 e 16"
+      "dur": 6,
+      "desc": "Resultado: os dois jogadores tiveram o mesmo desempenho"
     }],
     playback: {
       "mode": "loop"

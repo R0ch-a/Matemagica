@@ -28,14 +28,28 @@
   function numeroDe(art) {
     return tituloDe(art).replace(/^\D+/, '');
   }
+  // Linha de baixo de cada item do menu. Quando a questao diz em que
+  // livro e pagina esta' (data-livro / data-pagina, ou o data-livro do
+  // capitulo), o menu mostra essa referencia. Sem ela, cai no comeco do
+  // enunciado — data-resumo cobre os enunciados com fracao ou raiz, que
+  // viram texto embaralhado.
+  function referenciaDe(art) {
+    var pagina = art.getAttribute('data-pagina');
+    if (!pagina) return '';
+    var livro = art.getAttribute('data-livro') || document.body.getAttribute('data-livro') || '';
+    return (livro ? 'Livro ' + livro + ' · ' : '') + 'página ' + pagina;
+  }
+
   function resumoDe(art) {
-    // Enunciados com fracao ou raiz viram texto embaralhado; data-resumo
-    // da' ao menu uma versao em uma linha.
     var manual = art.getAttribute('data-resumo');
     if (manual) return manual.length > 90 ? manual.slice(0, 88).replace(/\s+\S*$/, '') + '…' : manual;
     var el = art.querySelector('.questao-enunciado');
     var txt = el ? el.textContent.replace(/\s+/g, ' ').trim() : '';
     return txt.length > 90 ? txt.slice(0, 88).replace(/\s+\S*$/, '') + '…' : txt;
+  }
+
+  function legendaDe(art) {
+    return referenciaDe(art) || resumoDe(art);
   }
 
   /* ---------------------------------------------------------
@@ -53,7 +67,7 @@
       a.setAttribute('role', 'menuitem');
       a.innerHTML = '<span class="q-menu-n"></span><span class="q-menu-s"></span>';
       a.querySelector('.q-menu-n').textContent = tituloDe(art);
-      a.querySelector('.q-menu-s').textContent = resumoDe(art);
+      a.querySelector('.q-menu-s').textContent = legendaDe(art);
       a.addEventListener('click', function () { fechar(true); });
       li.appendChild(a);
       lista.appendChild(li);

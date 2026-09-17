@@ -19,15 +19,25 @@
      defer preserva a ordem de execucao. -->
 <script defer src="../assets/vendor/react/react.production.min.js"></script>
 <script defer src="../assets/vendor/react/react-dom.production.min.js"></script>
+<!-- lottie-web: icones animados das questoes 11 e 12a. -->
+<script defer src="../assets/vendor/lottie/lottie.min.js"></script>
 <script defer src="../assets/questoes/capitulo-09/q02-equacao.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q03a-sistema-adicao.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q04-idade-pai.js"></script>
 <script defer src="../assets/questoes/capitulo-09/q06-prova.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q07-quintal.js"></script>
 <script defer src="../assets/questoes/capitulo-09/q08-quantias.js"></script>
 <script defer src="../assets/questoes/capitulo-09/q08-sistema.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q09a-sistema-decimal.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q11-sitio.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q12a-cedulas.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q12b-academia.js"></script>
+<script defer src="../assets/questoes/capitulo-09/q12c-festa.js"></script>
 <script defer src="../assets/js/questao-cena.js"></script>
-<script defer src="../assets/js/capitulo.js"></script>
+<script defer src="../assets/js/capitulo.js?v=2"></script>
 </head>
 
-<body data-capitulo="9">
+<body data-capitulo="9" data-livro="2">
 
 <header class="page-header">
   <div class="page-header-inner">
@@ -68,11 +78,13 @@
 
        id            ancora da URL (capitulo-09.html#q2)
        data-youtube  link do video narrado; vazio = icone desativado
+       data-pagina   pagina no livro; aparece no menu junto com o livro
+       data-livro    livro desta questao, se diferente do data-livro do <body>
        data-resumo   texto do menu, quando o enunciado tem formulas (opcional)
        data-cena     id da resolucao animada em window.Questoes
        ============================================================ -->
 
-  <article class="questao" id="q2" data-youtube=""
+  <article class="questao" id="q2" data-pagina="84" data-youtube=""
            data-resumo="No conjunto dos números racionais, resolva a equação e calcule o valor de √(xˣ + x²).">
     <header class="questao-intro">
       <p class="questao-tema">Equações</p>
@@ -106,7 +118,52 @@
     </footer>
   </article>
 
-  <article class="questao" id="q6" data-youtube="">
+  <article class="questao" id="q3a" data-pagina="83" data-youtube=""
+           data-resumo="Utilizando qualquer um dos métodos estudados e considerando U = ℚ × ℚ, resolva o sistema 5x − y = 13 e x + 2y = 7.">
+    <header class="questao-intro">
+      <p class="questao-tema">Sistemas de equações</p>
+      <h1 class="questao-titulo">Questão 3 · a</h1>
+      <p class="questao-enunciado">Utilizando qualquer um dos métodos estudados e considerando U = ℚ × ℚ, resolva o sistema <span class="mat-sistema"><span>5<i>x</i> − <i>y</i> = 13</span><span><i>x</i> + 2<i>y</i> = 7</span></span>.</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q03a"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p><strong>S = {(3, 2)}</strong>, ou seja, <i>x</i> = 3 e <i>y</i> = 2.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q4" data-pagina="75" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Equações do 1º grau</p>
+      <h1 class="questao-titulo">Questão 4</h1>
+      <p class="questao-enunciado">A idade de um pai é o triplo da idade do filho. Determine a idade do pai, sabendo que, daqui a 10 anos, ela será o dobro da idade do filho.</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q04"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>O pai tem <strong>30 anos</strong> e o filho, 10 anos.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q6" data-pagina="85" data-youtube="">
     <header class="questao-intro">
       <p class="questao-tema">Sistemas de equações</p>
       <h1 class="questao-titulo">Questão 6</h1>
@@ -134,7 +191,29 @@
     </footer>
   </article>
 
-  <article class="questao" id="q8-quantias" data-youtube="">
+  <article class="questao" id="q7" data-pagina="85" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Sistemas de equações</p>
+      <h1 class="questao-titulo">Questão 7</h1>
+      <p class="questao-enunciado">Em um quintal, existem galinhas e coelhos, totalizando 38 cabeças e 116 pés. Sabendo disso, quantos animais há de cada espécie?</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q07"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p><strong>18 galinhas</strong> e <strong>20 coelhos</strong>.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q8-quantias" data-pagina="47" data-livro="suplementar 2" data-youtube="">
     <header class="questao-intro">
       <p class="questao-tema">Equações com duas incógnitas</p>
       <h1 class="questao-titulo">Questão 8</h1>
@@ -156,7 +235,7 @@
     </footer>
   </article>
 
-  <article class="questao" id="q8-sistema" data-youtube=""
+  <article class="questao" id="q8-sistema" data-pagina="85" data-youtube=""
            data-resumo="Sendo o sistema 15x − 16y = 24 e 3x = 4y, com U = ℚ × ℚ, calcule o valor de x − y − 1.">
     <header class="questao-intro">
       <p class="questao-tema">Sistemas de equações</p>
@@ -178,6 +257,123 @@
       <details class="questao-resposta">
         <summary>Ver resposta</summary>
         <p>(<i>x</i>, <i>y</i>) = (8, 6) e <i>x</i> − <i>y</i> − 1 = <strong>1</strong></p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q9a" data-pagina="86" data-youtube=""
+           data-resumo="Resolva o sistema 4x − 1,9y = 1 e 8x − 3,9y = 1, sendo U = ℚ × ℚ.">
+    <header class="questao-intro">
+      <p class="questao-tema">Sistemas de equações</p>
+      <h1 class="questao-titulo">Questão 9 · a</h1>
+      <p class="questao-enunciado">Resolva o sistema <span class="mat-sistema"><span>4<i>x</i> − 1,9<i>y</i> = 1</span><span>8<i>x</i> − 3,9<i>y</i> = 1</span></span>, sendo U = ℚ × ℚ.</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q09a"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p><strong>S = {(5, 10)}</strong>, ou seja, <i>x</i> = 5 e <i>y</i> = 10.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q11" data-pagina="49" data-livro="suplementar 2" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Sistemas de equações</p>
+      <h1 class="questao-titulo">Questão 11</h1>
+      <p class="questao-enunciado">Em um sítio, há 75 animais, entre galinhas e vacas leiteiras, totalizando 260 patas. Para que esse sítio dê lucro, a quantidade de vacas precisa ser maior que a de galinhas. Tendo isso em vista, o sítio é lucrativo porque</p>
+      <ol class="questao-alternativas questao-alternativas--longas">
+        <li><span>a)</span> a quantidade de vacas é o dobro da de galinhas</li>
+        <li><span>b)</span> tem 35 vacas leiteiras a mais que galinhas</li>
+        <li><span>c)</span> a quantidade de galinhas é 25% da de vacas</li>
+        <li><span>d)</span> tem 20 galinhas a menos que vacas leiteiras</li>
+      </ol>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q11"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>Alternativa <strong>b)</strong>: o sítio tem <strong>55 vacas</strong> e <strong>20 galinhas</strong>, ou seja, 35 vacas a mais.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q12a" data-pagina="49" data-livro="suplementar 2" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Sistemas de equações</p>
+      <h1 class="questao-titulo">Questão 12 · a</h1>
+      <p class="questao-enunciado">Júlio tem R$ 277,00 em 74 cédulas de R$ 2,00 e de R$ 5,00. Quantas cédulas de cada tipo ele tem?</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q12a"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p><strong>31 cédulas</strong> de R$ 2,00 e <strong>43 cédulas</strong> de R$ 5,00.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q12b" data-pagina="49" data-livro="suplementar 2" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Sistemas de equações</p>
+      <h1 class="questao-titulo">Questão 12 · b</h1>
+      <p class="questao-enunciado">Sobre os alunos de uma academia de artes marciais, sabe-se que o número de mulheres é o quíntuplo do número de homens. Se saírem 15 mulheres, o número de homens passará a ser 2/5 do número de mulheres. Qual é o total de alunos dessa academia?</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q12b"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p><strong>36 alunos</strong>: 6 homens e 30 mulheres.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q12c" data-pagina="49" data-livro="suplementar 2" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Sistemas de equações</p>
+      <h1 class="questao-titulo">Questão 12 · c</h1>
+      <p class="questao-enunciado">Para uma festa, foram encomendados 200 salgados e 239 doces. Cada adulto comeria 5 salgados e 3 doces, enquanto cada criança comeria 1 salgado e 4 doces. Quantas pessoas foram à festa?</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap09-q12c"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p><strong>68 pessoas</strong>: 33 adultos e 35 crianças.</p>
       </details>
       <nav class="questao-nav" aria-label="Outras questões"></nav>
     </footer>

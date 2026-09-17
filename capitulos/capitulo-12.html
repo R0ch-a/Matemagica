@@ -19,13 +19,19 @@
      defer preserva a ordem de execucao. -->
 <script defer src="../assets/vendor/react/react.production.min.js"></script>
 <script defer src="../assets/vendor/react/react-dom.production.min.js"></script>
+<!-- lottie-web: icones animados da questao 4. -->
+<script defer src="../assets/vendor/lottie/lottie.min.js"></script>
+<script defer src="../assets/questoes/capitulo-12/q01-inversa.js"></script>
+<script defer src="../assets/questoes/capitulo-12/q03-handebol.js"></script>
+<script defer src="../assets/questoes/capitulo-12/q03c-proporcao.js"></script>
+<script defer src="../assets/questoes/capitulo-12/q03f-proporcao.js"></script>
+<script defer src="../assets/questoes/capitulo-12/q04-bolo.js"></script>
 <script defer src="../assets/questoes/capitulo-12/q10-idades.js"></script>
-<script defer src="../assets/questoes/capitulo-12/q11-razao.js"></script>
 <script defer src="../assets/js/questao-cena.js"></script>
-<script defer src="../assets/js/capitulo.js"></script>
+<script defer src="../assets/js/capitulo.js?v=2"></script>
 </head>
 
-<body data-capitulo="12">
+<body data-capitulo="12" data-livro="3">
 
 <header class="page-header">
   <div class="page-header-inner">
@@ -49,7 +55,7 @@
 
       <div class="q-menu">
         <button type="button" class="q-menu-btn" id="q-menu-btn" aria-haspopup="menu" aria-expanded="false" aria-controls="q-menu-list">
-          <span><span class="q-menu-prefixo">Questão </span><span class="q-menu-num">10</span></span>
+          <span><span class="q-menu-prefixo">Questão </span><span class="q-menu-num">1</span></span>
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <ul class="q-menu-list" id="q-menu-list" role="menu" aria-label="Questões do capítulo 12" hidden></ul>
@@ -64,13 +70,128 @@
        Uma questao = um <article>. O menu do header e a navegacao
        anterior/proxima sao montados a partir destes blocos.
 
-       id            ancora da URL (capitulo-12.html#q10)
+       id            ancora da URL (capitulo-12.html#q1)
        data-youtube  link do video narrado; vazio = icone desativado
+       data-pagina   pagina no livro; aparece no menu junto com o livro
+       data-livro    livro desta questao, se diferente do data-livro do <body>
        data-resumo   texto do menu, quando o enunciado tem formulas (opcional)
        data-cena     id da resolucao animada em window.Questoes
        ============================================================ -->
 
-  <article class="questao" id="q10" data-youtube="">
+  <article class="questao" id="q1" data-pagina="35" data-youtube=""
+           data-resumo="Em uma razão, o antecedente é 2/3 + 3/4 e o consequente é 2/3 − 3/4. Determine a inversa dessa razão.">
+    <header class="questao-intro">
+      <p class="questao-tema">Razão e proporção</p>
+      <h1 class="questao-titulo">Questão 1</h1>
+      <p class="questao-enunciado">Em uma razão, o antecedente é <span class="mat-frac"><span>2</span><span>3</span></span> + <span class="mat-frac"><span>3</span><span>4</span></span> e o consequente é <span class="mat-frac"><span>2</span><span>3</span></span> − <span class="mat-frac"><span>3</span><span>4</span></span>. Determine a inversa dessa razão.</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap12-q01"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>A inversa da razão é <span class="mat-frac mat-frac--forte"><span>−1</span><span>17</span></span>.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q3" data-pagina="35" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Razão</p>
+      <h1 class="questao-titulo">Questão 3</h1>
+      <p class="questao-enunciado">Em uma partida de handebol, Júnior conseguiu marcar 9 gols de 12 tentativas. João, por sua vez, tentou 16 vezes e marcou 12 gols. Se o desempenho dos jogadores é dado pela razão entre acertos e erros, nessa ordem, quem teve o melhor desempenho na partida?</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap12-q03"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>Os dois tiveram o <strong>mesmo desempenho</strong>: a razão é 3 para cada um (9 para 3 e 12 para 4).</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q3c" data-pagina="39" data-youtube=""
+           data-resumo="Calcule o valor de x na proporção x / (3x − 2) = 6 / 3.">
+    <header class="questao-intro">
+      <p class="questao-tema">Proporção</p>
+      <h1 class="questao-titulo">Questão 3 · c</h1>
+      <p class="questao-enunciado">Calcule o valor de <i>x</i> na proporção <span class="mat-frac"><span><i>x</i></span><span>3<i>x</i> − 2</span></span> = <span class="mat-frac"><span>6</span><span>3</span></span>.</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap12-q03c"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p><i>x</i> = <span class="mat-frac"><span>4</span><span>5</span></span></p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q3f" data-pagina="39" data-youtube=""
+           data-resumo="Calcule o valor de x na proporção [(x − 2)/3] / [(x − 1)/2] = 1/2.">
+    <header class="questao-intro">
+      <p class="questao-tema">Proporção</p>
+      <h1 class="questao-titulo">Questão 3 · f</h1>
+      <p class="questao-enunciado">Calcule o valor de <i>x</i> na proporção <span class="mat-frac"><span><span class="mat-frac"><span><i>x</i> − 2</span><span>3</span></span></span><span><span class="mat-frac"><span><i>x</i> − 1</span><span>2</span></span></span></span> = <span class="mat-frac"><span>1</span><span>2</span></span>.</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap12-q03f"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p><i>x</i> = <strong>5</strong></p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q4" data-pagina="39" data-youtube="">
+    <header class="questao-intro">
+      <p class="questao-tema">Proporção</p>
+      <h1 class="questao-titulo">Questão 4</h1>
+      <p class="questao-enunciado">Em uma receita de bolo, são necessários 3 ovos para cada 0,5 kg de farinha utilizada. Quantos ovos serão necessários para 2 kg de farinha?</p>
+      <p class="questao-dica">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Role a página para acompanhar a resolução
+      </p>
+    </header>
+
+    <div class="questao-cena" data-cena="cap12-q04"></div>
+
+    <footer class="questao-fim">
+      <details class="questao-resposta">
+        <summary>Ver resposta</summary>
+        <p>São necessários <strong>12 ovos</strong>.</p>
+      </details>
+      <nav class="questao-nav" aria-label="Outras questões"></nav>
+    </footer>
+  </article>
+
+  <article class="questao" id="q10" data-pagina="44" data-youtube="">
     <header class="questao-intro">
       <p class="questao-tema">Razão e proporção</p>
       <h1 class="questao-titulo">Questão 10</h1>
@@ -87,28 +208,6 @@
       <details class="questao-resposta">
         <summary>Ver resposta</summary>
         <p>Vítor tem <strong>9 anos</strong> e Davi tem <strong>12 anos</strong>.</p>
-      </details>
-      <nav class="questao-nav" aria-label="Outras questões"></nav>
-    </footer>
-  </article>
-
-  <article class="questao" id="q11" data-youtube="">
-    <header class="questao-intro">
-      <p class="questao-tema">Razão e proporção</p>
-      <h1 class="questao-titulo">Questão 11</h1>
-      <p class="questao-enunciado">A razão entre dois números positivos é 3 : 4. Sabendo que o produto desses números é 192, determine-os.</p>
-      <p class="questao-dica">
-        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11m0 0-4-4m4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Role a página para acompanhar a resolução
-      </p>
-    </header>
-
-    <div class="questao-cena" data-cena="cap12-q11"></div>
-
-    <footer class="questao-fim">
-      <details class="questao-resposta">
-        <summary>Ver resposta</summary>
-        <p>Os números são <strong>12</strong> e <strong>16</strong>.</p>
       </details>
       <nav class="questao-nav" aria-label="Outras questões"></nav>
     </footer>
